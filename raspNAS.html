@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Lexend:100,200,300,400,500,600,700,800,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend:100,200,300,400,500,600,700,800,900&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=3tVl71"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=3tVl71" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=ZRdrxU"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=ZRdrxU" type="text/css">
 
   
   
@@ -47,7 +47,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-white display-4" href="aboutme.html">
                             About Me</a></li>
-                    <li class="nav-item"><a class="nav-link link text-white text-primary display-4" href="index.html#top">Home</a></li>
+                    <li class="nav-item"><a class="nav-link link text-white text-primary display-4" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link link text-white display-4" href="index.html#contacts2-8">Contact</a>
                     </li></ul>
                 
@@ -107,7 +107,7 @@
                 <div class="text-wrapper">
                     <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5">
                         The new model</h3>
-                    <p class="mbr-text mbr-fonts-style display-7">As of the time of writing I think I am going to use my RP4 with a SATA hat and a large 2.5" HDD to simplify the setup. below is the journal entries. The entire process will be typed into a nice summary once I'm done.&nbsp;</p>
+                    <p class="mbr-text mbr-fonts-style display-7">As of the time of writing I think I am going to use my RP4 with a SATA hat and a large 2.5" HDD to simplify the setup. below is the journal entries.&nbsp;</p>
                 </div>
             </div>
         </div>
@@ -133,11 +133,51 @@
 <br>I can probably sell my two 3.5" HDD's and the dock for partial price of a new 2.5" 
 <br>
 <br>Looking around I see a my passport for mac and wonder, is mypassport for mac any different to windows? No, its the same thing, just needs to be reformatted.
-<br>I actually found a guy selling his 2tb drive because the packaging said "for mac", I offered to help him reformat it, will update.<br><br>Probably going to pick up one of the hard drives on Monday night. 4Tb&nbsp;<br><br>I have an idea for the aesthetics. I want to mount this in an old analog electronics unit. Anything from voltage readers to old CRT equipment. Updates to follow.<br><br>2/2/2024&nbsp;<br><br>I have decided that before I order the SATA card for raspberry pi, I may as well get a demo set up with one of my spare 126gb hard drives. Then once I have got the process working, I can order the extra parts and make the design more compact.<br><br>I have also started researching how to output some data via the GPIO pins from the pi that can be integrated into the final housing.&nbsp;<br><br>6/2/2024<br><br>I have acquired a 4TB SATA HDD 2.5" hard drive<br><br>Now I need to install Open Media Vault 6 (omv) 6 on my Pi 4, and test the hard drive. I have used omv before, and it is pretty steady and user friendly, and you can install docker applications on it, so I can (relatively) easily use the open source media server Jellyfin<br><br>For some reason, the raspberry pi imager didnt work on my computer (probably because I used a janky work around to install windows ll on a legacy NUC, but that is a story for another time). So i used my laptop for the image.&nbsp;<br><br>I followed <a href="https://wiki.omv-extras.org/doku.php?id=omv6:raspberry_pi_install" class="text-primary" target="_blank">this </a>tutorial to install omv. That was successful.&nbsp;<br><br>Then I created a new shared folder over the network following these steps:<br>1. Change your password by clicking the account icon in the top right corner -&gt; change password<br>2. I plugged in the HDD then went Storage -&gt; Disks, and wiped the hard drive (secure), this took took all night (approx 13 hours on a 4 Tb drive.) I would recommend just doing a quick format.<br><br>8/2/2024&nbsp;<br><br>3. After the secure boot, I added the drive as a file system: Storage -&gt; File Systems -&gt; plus icon. There you can create the file system, and you have to mount it.<br>4. After creating and mounting the file system, create a shared folder: Storage -&gt; Shared Folders -&gt; Plus Icon. I did this with both a "movies" and "TV" folder<br>5. Next, we need to share the folder over the network: Services -&gt; SMB -&gt; Shares -&gt; Plus icon. Dont forget to change the permissions to everyone can read write and to check "Inherit permissions"&nbsp;<br>6. I then tried to connect to the shared folder. I did this by mapping a network drive, but network discovery wasn't turned on, so I had to do that in the network and sharing centre.<br>7. I followed <a href="https://wiki.omv-extras.org/doku.php?id=omv6:docker_in_omv" class="text-primary" target="_blank">this </a>guide to set up Jellyfin Media Server<br><br><br></p>
+<br>I actually found a guy selling his 2tb drive because the packaging said "for mac", I offered to help him reformat it, will update.<br><br>Probably going to pick up one of the hard drives on Monday night. 4Tb&nbsp;<br><br>I have an idea for the aesthetics. I want to mount this in an old analog electronics unit. Anything from voltage readers to old CRT equipment. Updates to follow.<br><br>2/2/2024&nbsp;<br><br>I have decided that before I order the SATA card for raspberry pi, I may as well get a demo set up with one of my spare 126gb hard drives. Then once I have got the process working, I can order the extra parts and make the design more compact.<br><br>I have also started researching how to output some data via the GPIO pins from the pi that can be integrated into the final housing.&nbsp;<br><br>6/2/2024<br><br>I have acquired a 4TB SATA HDD 2.5" hard drive<br><br>Now I need to install Open Media Vault 6 (omv) 6 on my Pi 4, and test the hard drive. I have used omv before, and it is pretty steady and user friendly, and you can install docker applications on it, so I can (relatively) easily use the open source media server Jellyfin<br><br>For some reason, the raspberry pi imager didnt work on my computer (probably because I used a janky work around to install windows ll on a legacy NUC, but that is a story for another time). So i used my laptop for the image.&nbsp;<br><br>I followed <a href="https://wiki.omv-extras.org/doku.php?id=omv6:raspberry_pi_install" class="text-primary" target="_blank">this </a>tutorial to install omv. That was successful.&nbsp;<br><br>Then I created a new shared folder over the network following these steps:<br>1. Change your password by clicking the account icon in the top right corner -&gt; change password<br>2. I plugged in the HDD then went Storage -&gt; Disks, and wiped the hard drive (secure), this took took all night (approx 13 hours on a 4 Tb drive.) I would recommend just doing a quick format.<br><br>8/2/2024&nbsp;<br><br>3. After the secure boot, I added the drive as a file system: Storage -&gt; File Systems -&gt; plus icon. There you can create the file system, and you have to mount it.<br>4. After creating and mounting the file system, create a shared folder: Storage -&gt; Shared Folders -&gt; Plus Icon. I did this with both a "movies" and "TV" folder<br>5. Next, we need to share the folder over the network: Services -&gt; SMB -&gt; Shares -&gt; Plus icon. Dont forget to change the permissions to everyone can read write and to check "Inherit permissions"&nbsp;<br>6. I then tried to connect to the shared folder. I did this by mapping a network drive, but network discovery wasn't turned on, so I had to do that in the network and sharing centre.<br>7. I followed <a href="https://wiki.omv-extras.org/doku.php?id=omv6:docker_in_omv" class="text-primary" target="_blank">this </a>guide to set up Jellyfin Media Server<br><br>After all of that, I got the NAS working, with a Jellyfin media server that organises the media into a nice interface, and an SMB share so I can copy movies from my PC wirelessly.<br><br>NOTE: create the file structure that's in in the Jellyfin guide with share folders , then create the SMB share for your Media folder, then create the Jellyfin server. Also make sure media has the credentials "Everyone read/write". I didn't do this and spent an hour trying to figure out why windows didn't have permission to access the SMB share.&nbsp;<br><br>Now that everything is working, I recommend using the Free Commander software and it's<a href="https://freecommander.com/en/faq-file-operations/" class="text-primary" target="_blank"> queue feature</a> when copying multiple large files from your PC to the server.&nbsp;<br><br>Now that that is finished I move onto part 2.&nbsp;<br><br><br></p>
             </div>
         </div>
     </div>
-</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3131045" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/html-code-generator.html">HTML Code Creator</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>  
+</section>
+
+<section data-bs-version="5.1" class="image1 cid-u3Ge3U0g8E" id="image1-13">
+    
+
+    
+    
+
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6">
+                <div class="image-wrapper">
+                    <img src="assets/images/image-6-1152x896.png" alt="Sata NAS">
+                    
+                </div>
+            </div>
+            <div class="col-12 col-lg">
+                <div class="text-wrapper">
+                    <h3 class="mbr-section-title mbr-fonts-style mb-3 display-5">
+                        Casing</h3>
+                    <p class="mbr-text mbr-fonts-style display-7">I originally was going to house it is something 3D printed, or even just a small plastic box. But then I saw a listing of a guy who put his NAS in a retro radio, and I thought I should do the same thing, but with an old CRT monitor or something.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="content5 cid-u3GdOW94iQ" id="content5-12">
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-12">
+                <h3 class="mbr-section-title mbr-fonts-style mb-4 display-2">
+                    <strong>Part 2</strong></h3>
+                <h4 class="mbr-section-subtitle mbr-fonts-style mb-4 display-5">
+                    Reading signals from RPI</h4>
+                <p class="mbr-text mbr-fonts-style display-7"></p>
+            </div>
+        </div>
+    </div>
+</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/3131045" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/landing-page-builder.html">Landing Page Builder</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
 </body>
